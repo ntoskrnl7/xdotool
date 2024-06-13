@@ -5,7 +5,7 @@
   "main": "./out/index.js",
   "typings": "./out/index.d.ts",
   "scripts": {
-    "install":"npx tsc -p ./typescript",
+    "install":"tsc -p typescript",
     "postinstall": "npx cmake-js --prefer-clang --out build/cmake-js compile"
   },
   "files": [
