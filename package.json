@@ -5,10 +5,12 @@
   "main": "./out/index.js",
   "typings": "./out/index.d.ts",
   "scripts": {
+    "build": "tsc -p ./typescript/tsconfig.json",
+    "prepublish": "npm run build",
     "postinstall": "npx cmake-js --prefer-clang --out build/cmake-js compile"
   },
   "files": [
-    "**/*.{cpp,h,c,map,js,d.ts}",
+    "**/*.{cpp,h,c,map,js,ts,d.ts}",
     "**/CMakeLists.txt",
     "!build",
     "!cmake-build-*"
