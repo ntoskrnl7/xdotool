@@ -90,9 +90,12 @@ Local<ArrayBuffer> XScreenshooter::GetArrayBuffer() {
 
     Local<ArrayBuffer> buffer = ArrayBuffer::New(
         Nan::GetCurrentContext()->GetIsolate(),
-        data,
-        ByteLength(),
-        v8::ArrayBufferCreationMode::kExternalized
+        ArrayBuffer::NewBackingStore(
+            data,
+            ByteLength(),
+            nullptr,
+            nullptr
+        )
     );
     arrayBuffer.Reset(buffer);
     return New(arrayBuffer);

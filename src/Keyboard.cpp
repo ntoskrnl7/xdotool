@@ -98,9 +98,12 @@ Local<Value> XKeyboard::GetBuffer() {
     if(arrayBuffer.IsEmpty()) {
         auto buffer = v8::ArrayBuffer::New(
             Nan::GetCurrentContext()->GetIsolate(),
-            keys,
-            32,
-            v8::ArrayBufferCreationMode::kExternalized
+            v8::ArrayBuffer::NewBackingStore(
+                keys,
+                32,
+                nullptr,
+                nullptr
+            )
         );
         arrayBuffer.Reset(buffer);
     }
