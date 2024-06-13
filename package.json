@@ -1,10 +1,11 @@
 {
   "name": "xdotool",
-  "version": "1.0.55",
+  "version": "1.0.56",
   "description": "C++ bindings for Node.js to handle X11 using the full power of libxdo.",
   "main": "./out/index.js",
   "typings": "./out/index.d.ts",
   "scripts": {
+    "install":"npx tsc -p ./typescript",
     "postinstall": "npx cmake-js --prefer-clang --out build/cmake-js compile"
   },
   "files": [
